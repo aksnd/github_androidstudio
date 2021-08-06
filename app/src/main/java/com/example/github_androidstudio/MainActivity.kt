@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private val binding get()= mBinding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val torch = Torch(this) //손전등 관련
         // 뷰 바인딩 클래스의 인스턴스를 생성합니다.
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         // 생성된 뷰를 액티비티에 표시합니다.
@@ -23,6 +24,14 @@ class MainActivity : AppCompatActivity() {
         })
         //setContentView(R.layout.activity_main)
         Log.d(TAG,"MainActivity - onCreate() called")
+
+        binding.flashSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    torch.flashOn()
+                } else {
+                    torch.flashOff()
+                }
+        }
     }
     override fun onStart() {
         super.onStart()

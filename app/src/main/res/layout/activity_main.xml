@@ -42,4 +42,12 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
+    <Switch
+        android:id="@+id/flashSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:switchMinWidth="100dp"
+        android:switchPadding="20dp"
+        android:text="Text Visibility"
+        />
 </RelativeLayout>
