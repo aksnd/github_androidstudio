@@ -9,12 +9,12 @@
 
     <Button
         android:onClick="onBackButtonClicked"
-        android:id="@+id/second_button"
+        android:id="@+id/cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:textColor="#000"
-        android:text="뒤로가기"
+        android:text="알람 끄기"
         android:layout_centerInParent="true"
 
         />

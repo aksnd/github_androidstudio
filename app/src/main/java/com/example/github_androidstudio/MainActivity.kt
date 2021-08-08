@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.github_androidstudio.databinding.ActivityMainBinding
+import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
     val TAG: String = "로그"
@@ -31,6 +32,68 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     torch.flashOff()
                 }
+        }
+        binding.countdownButton.setOnClickListener{
+            Log.d(TAG,"timerstart")
+            var hourtxt=binding.hour.text.toString()
+            var mintxt=binding.min.text.toString()
+            var sectxt=binding.second.text.toString()
+            var hour:Int=0
+            var min:Int=0
+            var sec:Int=0
+            var isChecked=true
+            var turnonalarm=false
+            hourtxt=hourtxt.trim()
+            mintxt=mintxt.trim()
+            sectxt=sectxt.trim()
+            if(hourtxt.length>0) {
+                hour = Integer.parseInt(binding.hour.text.toString())
+            }
+            if(mintxt.length>0){
+                min = Integer.parseInt(binding.min.text.toString())
+            }
+            if(sectxt.length>0){
+                sec = Integer.parseInt(binding.second.text.toString())
+            }
+            timer(period = 1000, initialDelay = 1000) {
+                runOnUiThread {
+                    binding.countdownText.text = String.format("%02d : %02d : %02d", hour, min, sec)
+                }
+                if (turnonalarm == true) {
+                    if (isChecked) {
+                        torch.flashOn()
+                        isChecked=false
+                    } else {
+                        torch.flashOff()
+                        isChecked=true
+                    }
+                    binding.cancelBtn.setOnClickListener {
+                        torch.flashOff()
+                        binding.countdownText.text = String.format("%02d : %02d : %02d", 0,0,0)
+                        cancel()
+                    }
+                }
+                else {
+                    if (sec == 0 && min == 0 && hour == 0) {
+                        turnonalarm = true
+                        sec++
+                    }
+                    if (min == 0 && sec == 0) {
+                        hour--
+                        min = 59
+                        sec = 60
+                    }
+                    if (sec == 0) {
+                        min--
+                        sec = 60
+                    }
+                    sec--
+                    binding.cancelBtn.setOnClickListener {
+                        binding.countdownText.text = String.format("%02d : %02d : %02d", 0,0,0)
+                        cancel()
+                    }
+                }
+            }
         }
     }
     override fun onStart() {
@@ -58,6 +121,7 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TAG,"MainActivity - onDestroy() called")
     }
+
     fun TimeSetButtonClicked(){
         Log.d(TAG,"MainActivity - TimeSetButtonClicked() called")
         val intent = Intent(this, secondactivity::class.java)
