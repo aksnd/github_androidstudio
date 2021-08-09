@@ -1,9 +1,7 @@
 package com.example.github_androidstudio
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.github_androidstudio.databinding.ActivityMainBinding
 import kotlin.concurrent.timer
@@ -20,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         // 생성된 뷰를 액티비티에 표시합니다.
         setContentView(binding.root)
         //레이아웃을 설정
-        binding.setTime.setOnClickListener(View.OnClickListener {
+        /*binding.setTime.setOnClickListener(View.OnClickListener {
             TimeSetButtonClicked()
-        })
+        })*/
         //setContentView(R.layout.activity_main)
         Log.d(TAG,"MainActivity - onCreate() called")
 
@@ -108,7 +106,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        binding.textView.setText("abcd")
         Log.d(TAG,"MainActivity - onPause() called")
     }
 
@@ -122,12 +119,12 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"MainActivity - onDestroy() called")
     }
 
-    fun TimeSetButtonClicked(){
+    /*fun TimeSetButtonClicked(){
         Log.d(TAG,"MainActivity - TimeSetButtonClicked() called")
         val intent = Intent(this, secondactivity::class.java)
 
         startActivity(intent)
-    }
+    }*/
 }
 class ActivityMainBinding {
 

@@ -106,39 +106,6 @@
             />
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_chronometer"
-        android:layout_marginTop="10dp"
-        android:layout_centerInParent="true"
-        />
-    <TextView
-        android:visibility="visible"
-        android:id="@+id/text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image_view"
-        android:layout_centerHorizontal="true"
-        android:text="빛 알람"
-        android:textColor="#000000"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        />
-
-    <Button
-        android:id="@+id/set_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#454119"
-        android:text="시간 설정"
-        android:textColor="#FFF"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
     <Switch
         android:id="@+id/flashSwitch"
         android:layout_width="wrap_content"
