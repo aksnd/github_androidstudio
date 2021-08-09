@@ -58,6 +58,9 @@ class MainActivity : AppCompatActivity() {
             if(sectxt.length>0){
                 sec = Integer.parseInt(binding.second.text.toString())
             }
+            if(sec==0&&min==0&&hour==0){
+                return@setOnClickListener
+            }
             timer(period = 1000, initialDelay = 1000) {
                 runOnUiThread {
                     binding.countdownText.text = String.format("%02d : %02d : %02d", hour, min, sec)
