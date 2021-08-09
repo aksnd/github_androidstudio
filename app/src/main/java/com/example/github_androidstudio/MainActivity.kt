@@ -20,19 +20,22 @@ class MainActivity : AppCompatActivity() {
         // 생성된 뷰를 액티비티에 표시합니다.
         setContentView(binding.root)
         //레이아웃을 설정
+        /*
         binding.setTime.setOnClickListener(View.OnClickListener {
             TimeSetButtonClicked()
-        })
+        })*/
         //setContentView(R.layout.activity_main)
         Log.d(TAG,"MainActivity - onCreate() called")
 
+        /*
         binding.flashSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     torch.flashOn()
                 } else {
                     torch.flashOff()
                 }
-        }
+        }*/
+
         binding.countdownButton.setOnClickListener{
             Log.d(TAG,"timerstart")
             var hourtxt=binding.hour.text.toString()
@@ -108,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        binding.textView.setText("abcd")
+        //binding.textView.setText("abcd")
         Log.d(TAG,"MainActivity - onPause() called")
     }
 

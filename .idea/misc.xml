@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android studio/app/app/src/main/res/layout/activity_loading.xml" value="0.1125" />
+        <entry key="..\:/android studio/app/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/android studio/app/app/src/main/res/layout/activity_secondactivity.xml" value="0.12083333333333333" />
+        <entry key="..\:/android studio/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13697916666666668" />
+        <entry key="..\:/android studio/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.13697916666666668" />
         <entry key="..\:/coding/github_copy/app/src/main/res/drawable/ic_chronometer.xml" value="0.38229166666666664" />
         <entry key="..\:/coding/github_copy/app/src/main/res/drawable/splash_bg.xml" value="0.38229166666666664" />
         <entry key="..\:/coding/github_copy/app/src/main/res/drawable/splash_bg_gradient.xml" value="0.38229166666666664" />

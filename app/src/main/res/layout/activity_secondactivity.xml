@@ -7,15 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".secondactivity">
 
+    <ImageView
+        android:src="@drawable/on_alarm"
+
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+
+        android:layout_above="@id/cancel_btn"
+        android:layout_centerHorizontal="true"/>
+
     <Button
-        android:onClick="onBackButtonClicked"
         android:id="@+id/cancel_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:textColor="#000"
-        android:text="알람 끄기"
-        android:layout_centerInParent="true"
 
-        />
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:background="@color/clear"
+        android:fontFamily="@font/consola"
+        android:onClick="onBackButtonClicked"
+        android:text="Turn off the Alarm"
+        android:textColor="@color/main_2"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
